@@ -1,0 +1,201 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Global Styles */
+body,
+.App {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  font-size: 16px;
+  background: url(https://www.toptal.com/designers/subtlepatterns/patterns/lightpaperfibers.png);
+  background-size: cover;
+  color: #333;
+}
+
+button {
+  background: none;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  color: #4f97a3;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+button:hover {
+  color: #3a7b80;
+  background-color: rgba(74, 159, 172, 0.1);
+}
+
+/* App Layout */
+.App {
+  display: flex;
+}
+
+/* Sidebar Styles */
+.app-sidebar {
+  width: 30%;
+  height: 100vh;
+  border-right: 1px solid #ddd;
+  background: #e0f7fa;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.app-sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  background: #b2ebf2;
+  border-bottom: 1px solid #ddd;
+}
+.app-sidebar-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #006064;
+}
+
+.sidebar-quote {
+  font-size: 0.9rem; /* Adjust size as needed */
+  font-style: italic;
+  font-weight: bold; /* Make the text bold */
+  color: #006064; /* Blue color */
+  margin-top: 10px; /* Adjust top margin as needed */
+  margin-bottom: 15px; /* Adjust bottom margin as needed */
+}
+
+.app-sidebar-notes {
+  height: calc(100vh - 78px);
+  overflow-y: auto;
+  background: #e0f7fa;
+}
+.app-sidebar-note {
+  padding: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+  border-bottom: 1px solid #eee;
+}
+.sidebar-note-title {
+  display: flex;
+  justify-content: space-between;
+}
+.app-sidebar-note button {
+  color: #006064;
+}
+.app-sidebar-note p {
+  margin: 10px 0;
+}
+.app-sidebar-note small {
+  display: block;
+  color: #00796b;
+}
+
+.app-sidebar-note:hover {
+  background: #b2ebf2;
+}
+.app-sidebar-note.active,
+.app-sidebar-note.active small {
+  background: #4f97a3;
+  color: white;
+}
+
+/* Main Content Styles */
+.app-main {
+  width: 70%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #e8f5e9;
+}
+
+.app-main-note-edit,
+.app-main-note-preview {
+  height: 50vh;
+}
+
+.no-active-note {
+  width: 100%;
+  height: 100vh;
+  line-height: 100vh;
+  text-align: center;
+  font-size: 2rem;
+  color: #999;
+}
+
+/* Note Editing */
+.app-main-note-edit {
+  padding: 25px;
+  background: #ffffff;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.app-main-note-edit input,
+textarea {
+  display: block;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 10px;
+  resize: none;
+  font-size: inherit;
+  font-family: inherit;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.app-main-note-edit input {
+  height: 50px;
+  font-size: 2rem;
+}
+
+/* Note Preview */
+.app-main-note-preview {
+  border-top: 1px solid #ddd;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.02);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.preview-title {
+  padding: 25px 25px 0 25px;
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #388e3c;
+}
+
+.markdown-preview {
+  padding: 0 25px 25px 25px;
+  font-size: 1rem;
+  line-height: 1.75rem;
+}
+
+/* Scrollbar Styles */
+.app-sidebar-notes::-webkit-scrollbar,
+.app-main-note-preview::-webkit-scrollbar {
+  width: 8px;
+}
+
+.app-sidebar-notes::-webkit-scrollbar-track,
+.app-main-note-preview::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.app-sidebar-notes::-webkit-scrollbar-thumb,
+.app-main-note-preview::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.app-sidebar-notes::-webkit-scrollbar-thumb:hover,
+.app-main-note-preview::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
